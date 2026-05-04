@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agenda pessoal de atividades acadêmicas — nunca mais esqueça um prazo!">
+  <title>Minha Agenda — Atividades Acadêmicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated background particles -->
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-content">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="logo-title">Minha Agenda</h1>
+          <p class="logo-subtitle">Atividades Acadêmicas 2026</p>
+        </div>
+      </div>
+      <div class="header-stats" id="headerStats">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Stats -->
+  <section class="dashboard" id="dashboard">
+    <div class="stat-card stat-overdue" id="statOverdue">
+      <div class="stat-icon">🔴</div>
+      <div class="stat-info">
+        <span class="stat-number" id="countOverdue">0</span>
+        <span class="stat-label">Atrasadas</span>
+      </div>
+    </div>
+    <div class="stat-card stat-urgent" id="statUrgent">
+      <div class="stat-icon">🟠</div>
+      <div class="stat-info">
+        <span class="stat-number" id="countUrgent">0</span>
+        <span class="stat-label">Urgentes (≤3 dias)</span>
+      </div>
+    </div>
+    <div class="stat-card stat-thisweek" id="statThisWeek">
+      <div class="stat-icon">🟡</div>
+      <div class="stat-info">
+        <span class="stat-number" id="countThisWeek">0</span>
+        <span class="stat-label">Esta semana</span>
+      </div>
+    </div>
+    <div class="stat-card stat-upcoming" id="statUpcoming">
+      <div class="stat-icon">🟢</div>
+      <div class="stat-info">
+        <span class="stat-number" id="countUpcoming">0</span>
+        <span class="stat-label">No prazo</span>
+      </div>
+    </div>
+    <div class="stat-card stat-done" id="statDone">
+      <div class="stat-icon">✅</div>
+      <div class="stat-info">
+        <span class="stat-number" id="countDone">0</span>
+        <span class="stat-label">Concluídas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress bar -->
+  <section class="progress-section">
+    <div class="progress-header">
+      <span class="progress-title">Progresso Geral</span>
+      <span class="progress-percent" id="progressPercent">0%</span>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters-section" id="filtersSection">
+    <div class="filter-group">
+      <label class="filter-label">Filtrar por:</label>
+      <div class="filter-buttons" id="filterStatus">
+        <button class="filter-btn active" data-filter="all" id="filterAll">Todas</button>
+        <button class="filter-btn" data-filter="overdue" id="filterOverdue">🔴 Atrasadas</button>
+        <button class="filter-btn" data-filter="urgent" id="filterUrgentBtn">🟠 Urgentes</button>
+        <button class="filter-btn" data-filter="thisweek" id="filterThisWeek">🟡 Semana</button>
+        <button class="filter-btn" data-filter="upcoming" id="filterUpcoming">🟢 No prazo</button>
+        <button class="filter-btn" data-filter="done" id="filterDone">✅ Concluídas</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Matéria:</label>
+      <select class="filter-select" id="filterSubject">
+        <option value="all">Todas as matérias</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <input type="text" class="search-input" id="searchInput" placeholder="Buscar atividade...">
+    </div>
+  </section>
+
+  <!-- Tasks List -->
+  <main class="tasks-container" id="tasksContainer">
+    <!-- Filled by JS -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Feito com 💜 para nunca mais esquecer nada</p>
+    <p class="footer-date" id="footerDate"></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
